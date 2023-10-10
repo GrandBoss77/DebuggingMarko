@@ -13,6 +13,6 @@ public class Variety : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + new Vector3(Random.Range(-.05f,.05f), Random.Range(-.05f,.05f), Random.Range(0,0));
+        transform.position = transform.position + new Vector3(Random.Range(-0.5f,0.5f), Random.Range(-0.5f,0.5f), Random.Range(0,0));
     }
 }
