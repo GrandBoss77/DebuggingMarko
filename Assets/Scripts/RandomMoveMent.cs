@@ -9,19 +9,14 @@ public class RandomMoveMent : MonoBehaviour
     [SerializeField] float minTimeChangeDirection = 2.0f; // Minimum time to change direction
     [SerializeField] float maxTimeChangeDirection = 10f;  // Maximume time to change direction
     [SerializeField] float rotationSpeed = 30f;
-    [Header("Wobbling/scale")]
-    [SerializeField] float scaleSpeed = 1.0f; // Speed of the scaling
-    [SerializeField] float targetScale = 2.0f; // Target scale factor
-    [SerializeField] float originalScale = 1.0f; // Original scale factor
 
     private bool isScalingUp = true;
-    float moveSpeed;
+    private float moveSpeed;
     float changeDirectionInterval;
     float timer;
     Vector2 randomDirection;
     Rigidbody2D myRigidBody;
 
-    float scaleGrower;
     void Start()
     {
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
@@ -33,48 +28,8 @@ public class RandomMoveMent : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
     }
 
-
-
-    void Update()
-    {
-
-    }
-
-    void MakeScale()
-    {
-        //Scale
-        Vector2 currentScale = new Vector2(transform.localScale.x, transform.localScale.y);
-
-        if (isScalingUp)
-        {
-            // Scale up
-            currentScale += Vector2.one * scaleSpeed * Time.deltaTime;
-
-            if (currentScale.x >= targetScale)
-            {
-                currentScale = Vector2.one * targetScale;
-                isScalingUp = false;
-            }
-        }
-        else
-        {
-            // Scale down
-            currentScale -= Vector2.one * scaleSpeed * Time.deltaTime;
-
-            if (currentScale.x <= originalScale)
-            {
-                currentScale = Vector2.one * originalScale;
-                isScalingUp = true;
-            }
-        }
-
-        transform.localScale = new Vector3(currentScale.x, currentScale.y, 1.0f);
-    }
-
     void FixedUpdate()
     {
-        MakeScale();
-
         // Update the timer
         timer -= Time.deltaTime;
 

@@ -1,21 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Seek : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float checkPlayerRadius;
+
+
+    public void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        // CHALLENGE: This could be more efficient
-        GameObject moveTowardsThis = GameObject.FindWithTag("Player");
-        transform.position = Vector3.MoveTowards(transform.position, moveTowardsThis.transform.position, 0.005f);
-        // put in player's position
+        //Check for wall
+        LayerMask collisionLayers = LayerMask.GetMask("Player");
+        bool playerDetect = Physics2D.OverlapCircle(transform.position, checkPlayerRadius, collisionLayers);
+
+        if (playerDetect)
+        {
+            GameObject moveTowardsThis = GameObject.FindWithTag("Player");
+            transform.position = Vector3.MoveTowards(transform.position, moveTowardsThis.transform.position, 0.07f);
+        }
+        else
+        {
+            //transform.position = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0); 
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        
+        if(collider.gameObject.TryGetComponent(out GrowAndShrink otherblobs))
+        {
+            otherblobs.Grow();
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere((Vector2)transform.position, checkPlayerRadius);
     }
 }

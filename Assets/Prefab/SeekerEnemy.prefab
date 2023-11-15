@@ -12,14 +12,12 @@ GameObject:
   - component: {fileID: 4675834888588143528}
   - component: {fileID: 4675834888588143531}
   - component: {fileID: 4675834888588143530}
-  - component: {fileID: 4675834888588143535}
-  - component: {fileID: 4675834888588143534}
   - component: {fileID: 4675834888588143521}
   - component: {fileID: 4675834888588143520}
-  - component: {fileID: 5994856192059591622}
+  - component: {fileID: 3196755864859551311}
   m_Layer: 0
-  m_Name: RedEnemy
-  m_TagString: dontforgettoupdatethetag
+  m_Name: SeekerEnemy
+  m_TagString: Seeker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,30 +151,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4675834888588143535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4675834888588143523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c35c7b1f7ea7c418064cd81cc77a34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4675834888588143534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4675834888588143523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 702c45d9c902928439ae1e56d1d4679b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4675834888588143521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,15 +175,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4931b52c8d6394a95e33be451ce939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5994856192059591622
+  checkPlayerRadius: 9.3
+--- !u!114 &3196755864859551311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4675834888588143523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de50ddc9deb1304408a621f27c20cc0a, type: 3}
+  m_Script: {fileID: 11500000, guid: fd2142dcfcab9d443bd721b2d4c91df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minMoveSpeed: 4
+  maxMoveSpeed: 10
+  minTimeChangeDirection: 2
+  maxTimeChangeDirection: 10
+  rotationSpeed: 30
