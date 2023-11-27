@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6500875700553105850}
   - component: {fileID: 836379591952671171}
   - component: {fileID: 6911417379597197611}
-  - component: {fileID: 6721612911900811910}
   - component: {fileID: 2786311083439544749}
-  - component: {fileID: 1745827560055648185}
+  - component: {fileID: 6238693124659938231}
+  - component: {fileID: 1956610422092204676}
   m_Layer: 0
   m_Name: LightGreenBlob
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7319071658554719433}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.49, y: 18.440002, z: 0}
   m_LocalScale: {x: 1.9288499, y: 1.9288499, z: 3.8576999}
   m_ConstrainProportionsScale: 0
@@ -151,18 +151,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6721612911900811910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7319071658554719433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77018aaba53f9f0439f61b1546bb5df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2786311083439544749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702c45d9c902928439ae1e56d1d4679b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1745827560055648185
+--- !u!114 &6238693124659938231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,6 +172,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7319071658554719433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58545f349284ce4aa68e7e90e25611e, type: 3}
+  m_Script: {fileID: 11500000, guid: c32f968a9b786794593d02d765d86ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grow: 0.2
+  shrink: 0.2
+  maximumGrowLevel: 5
+--- !u!114 &1956610422092204676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7319071658554719433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2142dcfcab9d443bd721b2d4c91df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMoveSpeed: 1
+  maxMoveSpeed: 3
+  minTimeChangeDirection: 6
+  maxTimeChangeDirection: 10
+  rotationSpeed: 10

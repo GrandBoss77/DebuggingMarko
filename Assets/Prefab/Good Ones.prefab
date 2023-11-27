@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 8122995730740863154}
   - component: {fileID: 4614473780997241820}
   - component: {fileID: 2901006400037634873}
-  - component: {fileID: 5935108405985444714}
   - component: {fileID: 7585378122831675948}
-  - component: {fileID: 966560106794062431}
   - component: {fileID: 533459971440176742}
   - component: {fileID: 3490156185849967786}
   m_Layer: 0
@@ -117,18 +115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5935108405985444714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8568804650092421512}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163bbcaa06e9b584e880a505deb88b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &7585378122831675948
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,18 +150,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 5, y: 2.91}
   m_Direction: 1
---- !u!114 &966560106794062431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8568804650092421512}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58545f349284ce4aa68e7e90e25611e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &533459971440176742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,9 +167,6 @@ MonoBehaviour:
   minTimeChangeDirection: 2
   maxTimeChangeDirection: 10
   rotationSpeed: 30
-  scaleSpeed: 0.1
-  targetScale: 1.2
-  originalScale: 0.8
 --- !u!114 &3490156185849967786
 MonoBehaviour:
   m_ObjectHideFlags: 0

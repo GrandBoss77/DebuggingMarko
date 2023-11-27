@@ -188,12 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2142dcfcab9d443bd721b2d4c91df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoveSpeed: 4
-  maxMoveSpeed: 10
+  minMoveSpeed: 3
+  maxMoveSpeed: 5
   minTimeChangeDirection: 2
-  maxTimeChangeDirection: 10
-  rotationSpeed: 30
-  moveSpeed: 5
+  maxTimeChangeDirection: 4
+  rotationSpeed: 40
 --- !u!114 &8181570550651347381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +207,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grow: 0.2
   shrink: 0.2
+  maximumGrowLevel: 5

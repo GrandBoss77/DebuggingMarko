@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class Seek : MonoBehaviour
 {
     [SerializeField] float checkPlayerRadius;
-
+    
+    private RandomMoveMent randomMoveMent;
 
     public void Start()
     {
+        randomMoveMent = GetComponent<RandomMoveMent>();
     }
 
     void FixedUpdate()
@@ -22,18 +24,19 @@ public class Seek : MonoBehaviour
         {
             GameObject moveTowardsThis = GameObject.FindWithTag("Player");
             transform.position = Vector3.MoveTowards(transform.position, moveTowardsThis.transform.position, 0.07f);
+            randomMoveMent.enabled = false;
         }
         else
         {
-            //transform.position = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0); 
+            randomMoveMent.enabled = true;
         }
     }
 
     void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
+        if (collider.gameObject.TryGetComponent(out Damage damage))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            damage.ResetGame();
         }
         
         if(collider.gameObject.TryGetComponent(out GrowAndShrink otherblobs))

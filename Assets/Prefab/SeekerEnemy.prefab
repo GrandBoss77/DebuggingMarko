@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minMoveSpeed: 4
-  maxMoveSpeed: 10
+  maxMoveSpeed: 8
   minTimeChangeDirection: 2
-  maxTimeChangeDirection: 10
+  maxTimeChangeDirection: 5
   rotationSpeed: 30

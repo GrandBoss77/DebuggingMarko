@@ -17,11 +17,9 @@ public class PlayerMoveMent : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Get horizontal and vertical input values
+        // Get horizontal and vertical input values and calculate the movement direction
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
-        // Calculate the movement direction
         Vector2 moveDirection = new Vector2(horizontalInput, verticalInput).normalized;
 
         // Calculate rotation angle based on the movement direction
@@ -29,15 +27,11 @@ public class PlayerMoveMent : MonoBehaviour
 
         if (moveDirection != Vector2.zero)
         {
-            // Apply movement forces to the Rigidbody2D
             myRigidBody.velocity = moveDirection * moveSpeed;
-
-            // Update rotation only when there's movement input
             currentRotation = targetRotation;
         }
         else
         {
-            // Stop the object by setting its velocity to zero
             myRigidBody.velocity = Vector2.zero;
         }
 

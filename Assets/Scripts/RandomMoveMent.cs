@@ -10,12 +10,11 @@ public class RandomMoveMent : MonoBehaviour
     [SerializeField] float maxTimeChangeDirection = 10f;  // Maximume time to change direction
     [SerializeField] float rotationSpeed = 30f;
 
-    private bool isScalingUp = true;
     private float moveSpeed;
-    float changeDirectionInterval;
-    float timer;
-    Vector2 randomDirection;
-    Rigidbody2D myRigidBody;
+    private float changeDirectionInterval;
+    private float timer;
+    private Vector2 randomDirection;
+    private Rigidbody2D myRigidBody;
 
     void Start()
     {
@@ -51,5 +50,16 @@ public class RandomMoveMent : MonoBehaviour
     {
         // Generate a random direction
         randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(gameObject.CompareTag("Antidote"))
+        {
+            if(collision.gameObject.TryGetComponent(out GrowAndShrink otherblobs))
+            {
+                otherblobs.Shrink();
+            }
+        }
     }
 }

@@ -5,5 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour
 {
-
+    
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
